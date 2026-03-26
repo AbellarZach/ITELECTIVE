@@ -1,11 +1,16 @@
-import { Button } from "@/components/ui/button";
+import { AboutHero } from "@/components/features/About/AboutHero";
+import { Experience } from "@/components/features/About/Experience";
+import { AboutMe } from "@/components/features/About/AboutMe";
 
-export default function AboutPage () {
+
+export default function AboutPage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">About Me</h1>
-      <Button>Button Here</Button>
-    </div>
+    <>
+      <AboutHero />
+      <AboutMe />
+      <Experience />
+      
+    
+    </>
   );
-
 }

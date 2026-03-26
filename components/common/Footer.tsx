@@ -1,46 +1,87 @@
 import Link from "next/link";
-import { Mail, Github, Phone } from "lucide-react";
+
+const contactLinks = [
+  { href: "tel:09519333653", label: "Phone: 09519333653" },
+  { href: "mailto:test@gmail.com", label: "Email: zachbanned23@gmail.com" },
+  { href: "#", label: "Github" },
+  { href: "#", label: "LinkedIn" },
+] as const;
+
+const quickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+] as const;
+
+const sociallinks = [
+  { href: "https://facebook.com", label: "FACEBOOK" },
+  { href: "https://twitter.com", label: "TWITTER" },
+  { href: "https://gmail.com", label: "GMAIL" },
+  { href: "https://github.com", label: "GITHUB" },
+] as const;
+
+
 
 export function Footer() {
   return (
-    <footer className="bg-amber-100/50 dark:bg-gray-900 mt-16">
-      {/* Top Divider */}
-      <div className="border-t border-gray-300 dark:border-gray-700"></div>
-
-      <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        {/* Logo / Info */}
-        <div className="text-center md:text-left md:flex-1">
-          <h2 className="text-lg font-semibold">Portfolio</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">Cebu City, Philippines</p>
-        </div>
-
-        {/* Quick Links */}
-        <div className="flex flex-col md:flex-row md:flex-1 gap-4 md:gap-6 text-sm text-center md:text-left">
-          <Link href="/" className="hover:text-black dark:hover:text-white transition">Home</Link>
-          <Link href="/about" className="hover:text-black dark:hover:text-white transition">About</Link>
-          <Link href="/projects" className="hover:text-black dark:hover:text-white transition">Projects</Link>
-        </div>
-
-        {/* Contact */}
-        <div className="flex flex-col md:flex-1 gap-2 text-sm text-gray-600 dark:text-gray-400 text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-2">
-            <Phone className="h-4 w-4" /> <span>123-123-123</span>
+    <footer className="w-full border-t border-border bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <div className="ml-1  mr-10 grid grid-cols-2 gap-20 lg:grid-cols-3">
+          {/* Brand */}
+        
+             {/* Contact */}
+          <div>
+            <h3 className="mb-3 text-lg font-bold text-foreground ">CONTACT INFO</h3>
+            <ul className="space-y-2 border-r-1 border-primary">
+              {contactLinks.map(({ href, label }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-md text-color: black hover:text-foreground "
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex items-center justify-center md:justify-start gap-2">
-            <Mail className="h-4 w-4" /> <span>test@gmail.com</span>
+          
+ {/* Social Links */}
+          <div>
+            <h3 className="ml-30 mb-3 text-lg font-bold text uppercase text-foreground ">Social Links</h3>
+            <ul className="ml-12 space-y-5 flex flex-row gap-4">
+              {sociallinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-md text-color: gray hover:text-foreground"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex items-center justify-center md:justify-start gap-2">
-            <Github className="h-4 w-4" /> 
-            <Link href="https://github.com/yourusername" target="_blank" className="hover:text-black dark:hover:text-white transition">
-              GitHub
-            </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* Bottom Line */}
-      <div className="pt-4 text-center text-xs text-gray-500 dark:text-gray-400">
-        © {new Date().getFullYear()} Portfolio. All rights reserved.
+          {/* Quick links */}
+          <div>
+            <h3 className="ml-45 mb-3 text-lg font-bold text uppercase text-foreground">Pages</h3>
+            <ul className="ml-20 space-y-2 border-l-1 pl-20 border-primary">
+              {quickLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-md text-color: black hover:text-foreground"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+     
+        </div>
       </div>
     </footer>
   );
