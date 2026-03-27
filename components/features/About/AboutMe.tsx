@@ -7,7 +7,7 @@ import Link from "next/link";
 export function AboutMe() {
 
         return (
-               <div className="hover:shadow-lg hover:-translate-y-1 h-full group relative overflow-hidden rounded-lg border bg-background bg-muted rounded-lg bg-gray-100 mb-30 pl-18 mr-15 ">
+               <div className="hover:shadow-lg hover:-translate-y-1 h-full group relative overflow-hidden rounded-lg border bg-background bg-muted rounded-lg bg-gray-100 mb-30 pl-5 mr-15 ">
                 <div className="space-y-12 text-center md:text-left lg:px-10 pb-10 mt-20 mb-20">
                                 <SectionHeading title="About Me" description="" />
                                 <p className= "mr-10 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed lspace-y-6 text-justify "> 
