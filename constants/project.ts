@@ -2,25 +2,25 @@ import { title } from "process";
 
 export const PROJECTS = [
     {
-        title: "My Portfolio Website",
+        title: "Cordova Public College",
         category: "Websites",
-        description: "A comprehensive dashboard for managing cloud resources with real-time analytics and reporting.",
-        tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+        description: "A responsive website for Cordova Public College with course information and student resources.",
+        tags: ["Elementor", "WPform"],
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         links: {
-            demo: "https://example.com",
-            github: "https://github.com",
+            demo: "https://cordova-public-college.rf.gd/",
+            github: "https://cordova-public-college.rf.gd/",
         },
     },
     {
-        title: "Wordpress E-commerce Site",
+        title: "Premier Real Estate",
         category: "Websites",
-        description: "An e-commerce platform featuring a custom cart, payment processing, and user authentication flow.",
-        tags: ["WordPress", "Custom CSS", "SEO"],
+        description: "A modern real estate website with property listings, search functionality, and contact forms.",
+        tags: ["Elementor", "Element Pack Lite", "Elementor Pro"],
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         links: {
-            demo: "https://example.com",
-            github: "https://wordpress.com",
+            demo: "premier.free.je",
+            github: "premier.free.je",
         },
     },
     {
