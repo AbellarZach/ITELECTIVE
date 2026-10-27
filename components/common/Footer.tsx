@@ -8,9 +8,9 @@ const contactLinks = [
 
 const quickLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 const socialLinks = [

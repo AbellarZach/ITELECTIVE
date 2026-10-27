@@ -45,7 +45,7 @@ export function ContactForm() {
 	};
 
 	return (
-		<Section className="min-h-screen">
+		<Section id="contact" className="min-h-screen">
 			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center">
 
 				<Card className="w-full">
