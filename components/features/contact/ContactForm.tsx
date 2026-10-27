@@ -38,10 +38,43 @@ export function ContactForm() {
 		});
 
 	const onSubmit = async (data: FormData) => {
-		console.log("Form submitted:", data);
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-		toast.success("Sent successfully!");
-		form.reset();
+		try {
+			const response = await fetch("https://formsubmit.co/ajax/zachabellar03@gmail.com", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+				body: JSON.stringify({
+					name: data.name,
+					email: data.email,
+					subject: data.subject,
+					message: data.message,
+					_subject: `New Portfolio Message from ${data.name}: ${data.subject}`,
+					_template: "table",
+					_captcha: "false",
+				}),
+			});
+
+			const result = await response.json();
+
+			if (response.ok && (result.success === "true" || result.success === true || result.message)) {
+				toast.success("Message sent successfully! I'll get back to you soon.");
+				form.reset();
+			} else {
+				throw new Error(result.message || "Failed to send message.");
+			}
+		} catch (error) {
+			console.error("Submission error:", error);
+			// Fallback: open default mail client pre-filled
+			const mailtoUrl = `mailto:zachabellar03@gmail.com?subject=${encodeURIComponent(
+				`Portfolio Inquiry: ${data.subject}`
+			)}&body=${encodeURIComponent(
+				`Hi Zach,\n\nName: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+			)}`;
+			window.location.href = mailtoUrl;
+			toast.success("Opening your email client to send your message!");
+		}
 	};
 
 	return (
@@ -173,7 +206,7 @@ export function ContactForm() {
 
 					<div className="space-y-4">
 						<a
-							href="mailto:zachbanned23@gmail.com"
+							href="mailto:zachabellar03@gmail.com"
 							className="flex items-center gap-3 rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-primary/40"
 						>
 							<span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -181,7 +214,7 @@ export function ContactForm() {
 							</span>
 							<div>
 								<p className="text-sm font-medium">Email</p>
-								<p className="text-sm text-muted-foreground">zachbanned23@gmail.com</p>
+								<p className="text-sm text-muted-foreground">zachabellar03@gmail.com</p>
 							</div>
 						</a>
 						<a

@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const contactLinks = [
   { href: "tel:09519333653", label: "0951 933 3653", icon: Phone },
-  { href: "mailto:zachbanned23@gmail.com", label: "zachbanned23@gmail.com", icon: Mail },
+  { href: "mailto:zachabellar03@gmail.com", label: "zachabellar03@gmail.com", icon: Mail },
 ] as const;
 
 const quickLinks = [
@@ -16,13 +16,13 @@ const quickLinks = [
 const socialLinks = [
   { href: "https://github.com", label: "GitHub", icon: Github },
   { href: "https://linkedin.com", label: "LinkedIn", icon: Linkedin },
-  { href: "mailto:zachbanned23@gmail.com", label: "Email", icon: Mail },
+  { href: "mailto:zachabellar03@gmail.com", label: "Email", icon: Mail },
 ] as const;
 
 export function Footer() {
   return (
     <footer className="w-full border-t border-border/60 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 py-12">
+      <div className="w-full px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <div className="space-y-4">
