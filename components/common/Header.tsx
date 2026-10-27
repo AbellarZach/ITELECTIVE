@@ -6,12 +6,13 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
-
 ] as const;
 
 export function Header() {
@@ -19,27 +20,34 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      {/* Bar: Logo + nav + ThemeToggle + Menu — always on top, solid background */}
-      <div className="relative z-10 container mx-auto flex h-14 items-center justify-between gap-4 bg-background px-4 sm:px-6">
-        <Link href="/" className="font-bold text-2xl text-foreground shrink-0">
-          ZACH ABELLAR
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight text-foreground shrink-0">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent-foreground text-primary-foreground text-sm font-bold shadow-sm">
+            Z
+          </span>
+          <span className="hidden sm:inline">Zach Abellar</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-2 lg:gap-4">
-          <ul className="flex items-center gap-2 lg:gap-4">
+        <nav className="hidden md:flex items-center">
+          <ul className="flex items-center gap-1">
             {navLinks.map(({ href, label }) => {
               const isActive = pathname === href;
               return (
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground ${isActive
-                      ? "bg-accent text-accent-foreground font-medium"
-                      : "text-muted-foreground"
-                      }`}
+                    className={cn(
+                      "relative rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
                   >
                     {label}
+                    {isActive && (
+                      <span className="absolute inset-x-2 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-primary to-accent-foreground" />
+                    )}
                   </Link>
                 </li>
               );
@@ -62,19 +70,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Backdrop: only below the bar, dims the page */}
       {open && (
-        <div
-          className="md:hidden fixed inset-0 top-14 left-0 right-0 bottom-0 z-0 bg-black/50 backdrop-blur-sm"
-          aria-hidden
-          onClick={() => setOpen(false)}
-        />
-      )}
-
-      {/* Menu panel: below the bar, above the backdrop */}
-      {open && (
-        <div className="md:hidden relative z-10 border-t border-border bg-background">
-          <nav className="container mx-auto px-4 py-4">
+        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
+          <nav className="container mx-auto px-4 py-3">
             <ul className="flex flex-col gap-1">
               {navLinks.map(({ href, label }) => {
                 const isActive = pathname === href;
@@ -83,17 +81,18 @@ export function Header() {
                     <Link
                       href={href}
                       onClick={() => setOpen(false)}
-                      className={`block rounded-md px-3 py-2.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground ${isActive
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground"
-                        }`}
+                      className={cn(
+                        "block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
+                        isActive
+                          ? "bg-accent text-accent-foreground"
+                          : "text-muted-foreground hover:bg-accent/60 hover:text-foreground"
+                      )}
                     >
                       {label}
                     </Link>
                   </li>
                 );
               })}
-             
             </ul>
           </nav>
         </div>

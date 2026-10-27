@@ -14,7 +14,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea, } from "@/components/ui/input-group";
-import { Send } from "lucide-react";
+import { Send, Mail, Phone, Github, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 
 const formSchema = z.object({
@@ -156,17 +156,64 @@ export function ContactForm() {
 					</CardFooter>
 				</Card>
 
-                <div className="space-y-6">
-					<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-						Lets Work Together
-					</h1>
-					<p className="text-muted-foreground md:text-xl/relaxed">
-						Have a project in mind or just want to chat? Fill out the form or reach out directly. Im always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-					</p>
+                <div className="space-y-8">
+					<div className="space-y-4">
+						<p className="text-sm font-semibold uppercase tracking-widest text-primary">
+							Contact
+						</p>
+						<h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+							Let&apos;s work together
+						</h1>
+						<p className="text-muted-foreground md:text-lg/relaxed">
+							Have a project in mind or just want to chat? Fill out the form or
+							reach out directly. I&apos;m always open to discussing new
+							projects, creative ideas, or opportunities.
+						</p>
+					</div>
 
-					<div className="space-y-4 pt-4">
-						<div className="flex items-center gap-3">
-						</div>
+					<div className="space-y-4">
+						<a
+							href="mailto:zachbanned23@gmail.com"
+							className="flex items-center gap-3 rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-primary/40"
+						>
+							<span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+								<Mail className="h-5 w-5" />
+							</span>
+							<div>
+								<p className="text-sm font-medium">Email</p>
+								<p className="text-sm text-muted-foreground">zachbanned23@gmail.com</p>
+							</div>
+						</a>
+						<a
+							href="tel:09519333653"
+							className="flex items-center gap-3 rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-primary/40"
+						>
+							<span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+								<Phone className="h-5 w-5" />
+							</span>
+							<div>
+								<p className="text-sm font-medium">Phone</p>
+								<p className="text-sm text-muted-foreground">0951 933 3653</p>
+							</div>
+						</a>
+					</div>
+
+					<div className="flex gap-3 pt-2">
+						{[
+							{ href: "https://github.com", label: "GitHub", icon: Github },
+							{ href: "https://linkedin.com", label: "LinkedIn", icon: Linkedin },
+						].map(({ href, label, icon: Icon }) => (
+							<a
+								key={label}
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={label}
+								className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+							>
+								<Icon className="h-4 w-4" />
+							</a>
+						))}
 					</div>
 				</div>
 			</div>
