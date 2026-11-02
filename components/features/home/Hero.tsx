@@ -91,7 +91,7 @@ export function Hero() {
                 Zach
               </span>
               <br className="hidden md:inline" />
-              <span className="text-foreground/85"> a Wordpress developer.</span>
+              <span className="text-foreground/85"> a WordPress Developer.</span>
             </h1>
 
             {/* Subtitle with vertical green accent bar */}

@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ExternalLink, Globe, Lock, MoveVertical, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export type ProjectModalDetails = {
   eyebrow?: string;

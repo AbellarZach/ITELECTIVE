@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export function AboutHero() {
   return (
@@ -44,10 +43,15 @@ export function AboutHero() {
 
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
             <Button size="lg" className="group" asChild>
-              <Link href="https://docs.google.com/document/d/1eDHypor1Cpc7PU7mcN8epjAqpy3J1hts/edit" download>
+              <a
+                href="/zach-resume.pdf"
+                download="Zach_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

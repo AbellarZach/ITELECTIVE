@@ -26,8 +26,8 @@ export type ProjectItem = {
 export const PROJECTS: ProjectItem[] = [
     {
         title: "OrganBee Honey",
-        category: "E-commerce",
-        description: "An e-commerce website for organic honey products with a focus on user experience and seamless shopping.",
+        category: "Woo-commerce",
+        description: "An organic honey storefront bringing product discovery, promotional bundles, flash sale deals, customer testimonials, and an intuitive checkout flow into one responsive e-commerce experience.",
         tags: ["WooCommerce", "Elementor", "WooPayments"],
         image: "/organ.png",
         links: {
@@ -80,15 +80,32 @@ export const PROJECTS: ProjectItem[] = [
         }
     },
     {
-        title: "Figma Design System",
-        category: "Websites",
-        description: "A comprehensive design system for creating consistent and scalable user interfaces.",
-        tags: ["Figma", "Design Systems", "UI/UX"],
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "ShoeFit",
+        category: "Woo-commerce",
+        description: "A modern footwear and lifestyle sneaker e-commerce website designed to provide a smooth, engaging shopping journey with intuitive product browsing, limited-time flash deals, customer testimonials, and an intuitive checkout flow.",
+        tags: ["Elementor", "Woo-commerce", "Woostify"],
+        image: "/ShoeFits.png",
         links: {
-            demo: "https://example.com",
-            github: "https://figma.com",
+            demo: "https://shoefit.site.je/",
+            github: "https://shoefit.site.je/",
         },
+        modalDetails: {
+            eyebrow: "E-commerce & Footwear",
+            subtitle: "Website design & WooCommerce development",
+            previewImage: "/ShoeFits.png",
+            liveUrl: "https://shoefit.site.je/",
+            aboutTitle: "About the project",
+            aboutDescription: "A modern footwear and lifestyle sneaker e-commerce website designed to provide a smooth, engaging shopping journey with intuitive product browsing, limited-time flash deals, customer testimonials, and an intuitive checkout flow.",
+            role: "Website design & WooCommerce development",
+            features: [
+                "Full e-commerce store with product categories (Men, Women, Kids, Lifestyle)",
+                "Limited-time discount deals, promotional sale badges, and new arrival showcases",
+                "Curated brand spotlights including Nike, Adidas, Jordan, Vans, and Fila",
+                "Fast, mobile-responsive shopping layout built with Woostify and WooCommerce",
+                "Customer testimonials and interactive shopping cart with streamlined checkout"
+            ],
+            techTags: ["WooCommerce", "WordPress", "Woostify", "Elementor", "E-commerce", "Responsive Design", "UI/UX Design"]
+        }
     },
     {
         title: "Project Delta",
