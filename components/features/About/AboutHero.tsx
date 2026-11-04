@@ -44,8 +44,8 @@ export function AboutHero() {
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
             <Button size="lg" className="group" asChild>
               <a
-                href="/zach-resume.pdf"
-                download="Zach_Resume.pdf"
+                href="/zachresume.pdf"
+                download="zachresume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
