@@ -34,7 +34,7 @@ export function AboutHero() {
               ABOUT ME
             </span>
             <p className="pt-6 max-w-[680px] text-muted-foreground md:text-xl/relaxed">
-              I&apos;m a junior WordPress Developer with 6 months of hands-on experience in designing and developing websites from scratch. I specialize in creating responsive, user-friendly, and visually appealing websites tailored to different needs, including e-commerce stores, personal websites, booking platforms, and membership websites. </p>
+              I&apos;m a WordPress Developer with years of hands-on experience in designing and developing websites from scratch. I specialize in creating responsive, user-friendly, and visually appealing websites tailored to different needs, including e-commerce stores, personal websites, booking platforms, and membership websites. </p>
             <p className="pt-6 max-w-[680px] text-muted-foreground md:text-xl/relaxed">
               I&apos;m passionate about turning ideas into functional digital experiences through clean design, practical solutions, and attention to detail. I&apos;m continuously improving my skills and exploring new technologies to build websites that not only look great but also deliver a seamless user experience.
             </p>
